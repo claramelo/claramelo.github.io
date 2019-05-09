@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ProfileHeader from './molecules/ProfileHeader';
+import GlobalCss from './helpers/globalCss.styled';
+import { AppWipContainer } from './App.styled';
+
+import profileImage from  './static/image/profile.jpg'
+
+const generalInfo = {
+  name: "Maria Clara Melo de Carvalho",
+  image: profileImage,
+};
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <GlobalCss />
+        <ProfileHeader generalInfo={generalInfo}/>
+        <AppWipContainer>
+          <img src="https://thumbs.gfycat.com/ScaryMassiveGallowaycow-max-1mb.gif" alt="wip"/>
+        </AppWipContainer>
+      </>
     );
   }
 }
